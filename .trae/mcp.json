@@ -1,8 +1,0 @@
-{
-  "mcpServers": {
-    "word-mcp": {
-      "command": ".trae/word-mcp.bat",
-      "args": []
-    }
-  }
-}

@@ -20,19 +20,43 @@ cd Machine Learning
 
 ### 2. 配置 MCP 服务器
 
-在 TRAE 或其它 MCP 服务器中配置本项目中需要用到的 MCP 配置文件。
+运行以下命令，将生成 MCP 配置 JSON 文件，将其复制到 TRAE 或其它 MCP 服务器的配置中。
+```bashhell
+# 获取当前文件夹下的 uvx.exe 并生成 MCP 配置 JSON
+$uvxPath = (Get-ChildItem -Path ".\" -Filter "uvx.exe" -Recurse -ErrorAction SilentlyContinue | Select-Object -First 1).FullName; if ($uvxPath) { $uvxPath = $uvxPath -replace '\\', '\\'; @"
+{
+  "mcpServers": {
+    "office-word": {
+      "command": "$uvxPath",
+      "args": [
+        "--from",
+        "office-word-mcp-server",
+        "word_mcp_server"
+      ]
+    }
+  }
+}
+"@ } else { Write-Host "当前文件夹未找到 uvx.exe" }
+```
 
+
+例如（这个不要用，是我本地的配置）：
 ```json
 {
   "mcpServers": {
-    "word-mcp": {
-      "command": ".trae/word-mcp.bat",
-      "args": []
+    "office-word": {
+      "command": "F:\\Project\\SWJTU-Meachine_Learning_Exp_SKILL\\.trae\\uvx.exe",
+      "args": [
+        "--from",
+        "office-word-mcp-server",
+        "word_mcp_server"
+      ]
     }
   }
 }
 ```
 
+如果你的 Agent 在过程中忽略了 MCP，那我没招了，这个 AI 模型就是个 **。
 
 ### 3. 目录结构说明
 
@@ -64,6 +88,8 @@ Exp_i/
 把你从老师那里接收到的实验文件夹直接丢给 Agent，让它干活就可以了。
 
 ### 首次运行
+
+Prompt: 根据项目skill完成`第i次实验目录`
 
 1. Agent 会向你询问相关信息，请留意回复。所有的信息只会记录在你的本地，请放心。
 2. 首次运行时，MCP 服务器会从网络下载，可能需要一些时间。
