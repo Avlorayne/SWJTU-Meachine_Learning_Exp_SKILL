@@ -1,0 +1,1 @@
+@"%~dp0uvx.exe" --from office-word-mcp-server word_mcp_server %*
