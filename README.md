@@ -1,13 +1,13 @@
 # 西南交通大学 机器学习实验
 
-[解手流]
+[解手流]    
 本项目用于西南交通大学机器学习课程的实验任务，提供了完整的实验工作流和自动化工具，实现了从拿到实验任务到上交作业的全程解手。
 
 ## 前置条件
 
 - **Python 3.10+** — 所有实验代码运行环境
 - **Microsoft Word** — 实验报告模板填写和 PDF 导出
-- **[Trae IDE](https://www.trae.ai/)**（推荐） — 自动执行实验工作流（可选）
+- **[Trae IDE](https://www.trae.ai/)**（推荐） — 自动执行实验工作流（可选）  
 其实你用deepseek-tui这种也没有什么问题，要是有问题就向我提 issue 或 rp
 
 ## 快速开始
@@ -41,7 +41,7 @@ $uvxPath = (Get-ChildItem -Path ".\" -Filter "uvx.exe" -Recurse -ErrorAction Sil
 ```
 
 
-例如（这个不要用，是我本地的配置）：
+参考：
 ```json
 {
   "mcpServers": {
@@ -56,8 +56,9 @@ $uvxPath = (Get-ChildItem -Path ".\" -Filter "uvx.exe" -Recurse -ErrorAction Sil
   }
 }
 ```
+（这个不要用，是我本地的配置）
 
-如果你的 Agent 在过程中忽略了 MCP，那我没招了，这个 AI 模型就是个 **。
+如果你的 Agent 在过程中忽略了 MCP，那我没招了，你用的 AI 模型就是个 S*。反正 python 脚本也能用来写 docx，爱怎么干怎么干。
 
 ### 3. 目录结构说明
 
