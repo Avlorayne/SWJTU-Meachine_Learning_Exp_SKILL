@@ -14,8 +14,8 @@
 ### 1. 克隆项目
 
 ```bash
-git clone <仓库地址>
-cd Machine Learning
+git clone https://github.com/Avlorayne/SWJTU-Meachine_Learning_Exp_SKILL.git
+cd SWJTU-Meachine_Learning_Exp_SKILL
 ```
 
 ### 2. 配置 MCP 服务器
